@@ -1,0 +1,16 @@
+[
+  {
+    "username": "giorgosf",
+    "password": "password123",
+    "displayName": "Γιώργος Φ.",
+    "canSeeMUN": true,
+    "isadmin": false
+  },
+  {
+    "username": "christos",
+    "password": "christos_here1234",
+    "displayName": "Christos_here - Admin",
+    "canSeeMUN": true,
+    "isadmin": true
+  }
+]

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Πρόγραμμα</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 1px solid #000;
+    }
+    .btn-logout {
+      background: #0077cc;
+      color: white;
+      border: 1px solid #000;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .highlight-day {
+      background-color: #f0f8ff;
+    }
+    .web, .file {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+    .date-label {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="welcome">Όνομα χρήστη: <span id="displayName">Χρήστης</span></div>
+  <div>
+    <button id="logoutBtn" class="btn-logout">Αποσύνδεση</button>
+  </div>
+</div>
+
+<h1>Πρόγραμμα</h1>
+
+<div class="schedule-wrapper">
+  <table class="days-column">
+    <tbody>
+      <tr><td>Δευ</td></tr>
+      <tr><td>Τρι</td></tr>
+      <tr><td>Τετ</td></tr>
+      <tr><td>Πεμ</td></tr>
+      <tr><td>Παρ</td></tr>
+    </tbody>
+  </table>
+
+  <div class="table-wrapper">
+    <table>
+      <tbody>
+        <tr data-day="Δευ"><td>ΕΡΓΔ</td><td>ΒΙΟ</td><td>ΜΑΘ</td><td>Θ</td><td>ΙΛΙ</td><td>ΠΛ-ΤΧ</td><td></td></tr>
+        <tr data-day="Τρι"><td>Θ</td><td>ΜΟΥ</td><td>Ι</td><td>ΑΓΓ</td><td>ΑΡΧ</td><td>ΦΥΣ</td><td>ΓΕΩ</td></tr>
+        <tr data-day="Τετ"><td>ΓΥΜΝ</td><td>ΓΛ-ΓΜ</td><td>ΓΛ-ΓΜ</td><td>ΑΓΓ</td><td>Ι</td><td>ΝΛ</td><td>ΜΑΘ</td></tr>
+        <tr data-day="Πεμ"><td>ΜΑΘ</td><td>ΚΑΛΛ</td><td>ΙΛΙ</td><td>ΧΗΜ</td><td>ΦΥΣ</td><td>ΠΛ-ΤΧ</td><td>ΝΓ</td></tr>
+        <tr data-day="Παρ"><td>ΑΡΧ</td><td>ΝΓ</td><td>ΓΥΜΝ</td><td>ΓΕΩ</td><td>ΜΑΘ</td><td>ΝΛ</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="selected-wrapper">
+      <p id="selected">Κάνε κλικ σε ένα μάθημα για να δεις λεπτομέρειες.</p>
+    </div>
+  </div>
+</div>
+
+<div class="links-wrapper">
+  <a href="https://1gym-pylaias.thess.sch.gr" target="_blank">Σελίδα Σχολείου</a>
+  <a href="https://1gym-pylaias.thess.sch.gr/category/anakoinoseis-gia-mathites/" target="_blank">Ανακοινώσεις Σχολείου</a>
+  <span id="munLinkContainer"></span>
+</div>
+
+<script>
+/* ----------------- Authentication ----------------- */
+(function() {
+  try {
+    const raw = sessionStorage.getItem('loggedInUser');
+    if (!raw) {
+      window.location.href = 'login.html';
+      return;
+    }
+    window.__CURRENT_USER = JSON.parse(raw);
+  } catch (err) {
+    console.error('Auth error', err);
+    window.location.href = 'login.html';
+  }
+})();
+
+/* ----------------- User Info ----------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const user = window.__CURRENT_USER;
+  if (user && user.displayName) {
+    document.getElementById('displayName').textContent = user.displayName;
+  }
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    sessionStorage.removeItem('loggedInUser');
+    window.location.href = 'login.html';
+  });
+
+  const munContainer = document.getElementById('munLinkContainer');
+  if (user && user.canSeeMUN) {
+    const munLink = document.createElement('a');
+    munLink.href = "https://pyleamun.github.io/pyleamun2026/";
+    munLink.target = "_blank";
+    munLink.textContent = "Pylaia MUN";
+    munContainer.appendChild(munLink);
+  }
+});
+
+/* ----------------- Timetable Logic ----------------- */
+const fullNames = {
+  "ΜΑΘ":"ΜΑΘΗΜΑΤΙΚΑ","ΦΥΣ":"ΦΥΣΙΚΗ","ΝΓ":"ΝΕΟΕΛΛΗΝΙΚΗ ΓΛΩΣΣΑ","ΜΟΥ":"ΜΟΥΣΙΚΗ",
+  "ΒΙΟ":"ΒΙΟΛΟΓΙΑ","ΓΛ-ΓΜ":"ΓΑΛΛΙΚΑ / ΓΕΡΜΑΝΙΚΑ","ΑΓΓ":"ΑΓΓΛΙΚΑ","ΓΕΩ":"ΓΕΩΓΡΑΦΙΑ",
+  "ΑΡΧ":"ΑΡΧΑΙΑ","ΠΛ-ΤΧ":"ΠΛΗΡΟΦΟΡΙΚΗ / ΤΕΧΝΟΛΟΓΙΑ","ΝΛ":"ΝΕΟΕΛΛΗΝΙΚΗ ΛΟΓΟΤΕΧΝΙΑ",
+  "Ι":"ΙΣΤΟΡΙΑ","ΕΡΓΔ":"ΕΡΓΑΣΤΗΡΙΟ ΔΕΞΙΟΤΗΤΩΝ","ΚΑΛΛ":"ΚΑΛΛΙΤΕΧΝΙΚΑ","ΓΥΜΝ":"ΓΥΜΝΑΣΤΙΚΗ",
+  "ΧΗΜ":"ΧΗΜΕΙΑ","ΙΛΙ":"ΙΛΙΑΔΑ","Θ":"ΘΡΗΣΚΕΥΤΙΚΑ"
+};
+
+const selectedText = document.getElementById("selected");
+const cells = document.querySelectorAll(".table-wrapper table td");
+let hwData = {};
+
+fetch('hw_info.json')
+  .then(res => res.json())
+  .then(data => { hwData = data; console.log('Loaded HW data', hwData); })
+  .catch(err => console.error('Could not load hw_info.json', err));
+
+const greekMonths = ["Ιανουαρίου","Φεβρουαρίου","Μαρτίου","Απριλίου","Μαΐου","Ιουνίου","Ιουλίου","Αυγούστου","Σεπτεμβρίου","Οκτωβρίου","Νοεμβρίου","Δεκεμβρίου"];
+const greekDaysFull = {"Δευ":"Δευτέρα","Τρι":"Τρίτη","Τετ":"Τετάρτη","Πεμ":"Πέμπτη","Παρ":"Παρασκευή"};
+const dayToNumber = { "Δευ":1,"Τρι":2,"Τετ":3,"Πεμ":4,"Παρ":5 };
+
+function getThisWeekDateForDay(targetDay){
+  const today = new Date();
+  const todayNum = today.getDay();
+  const targetNum = dayToNumber[targetDay];
+  if(targetNum===undefined) return today;
+  const monday = new Date(today);
+  const offsetToMonday = todayNum===0?-6:1-todayNum;
+  monday.setDate(today.getDate()+offsetToMonday);
+  const result = new Date(monday);
+  result.setDate(monday.getDate()+(targetNum-1));
+  return result;
+}
+
+cells.forEach(cell => {
+  cell.addEventListener("click",()=>{
+    const row = cell.closest("tr");
+    const dayShort = row?.getAttribute("data-day")||"_";
+    const key = cell.textContent.trim();
+    const title = fullNames[key]||key||"Άγνωστο μάθημα";
+
+    const dateObj = getThisWeekDateForDay(dayShort);
+    const dayName = greekDaysFull[dayShort]||"";
+    const dateText = `${dayName} ${dateObj.getDate()} ${greekMonths[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
+
+    let info = hwData[dayShort] && hwData[dayShort][key]? hwData[dayShort][key] : hwData["_"];
+    let content = "";
+
+    if(info.blocks && Array.isArray(info.blocks)){
+      info.blocks.forEach(block => {
+        if(block.type === "text") content += `<p>${block.value}</p>`;
+        if(block.type === "website" && block.value) content += `<a href="${block.value}" target="_blank"><img src="otherfiles/website.png" class="web" title="Άνοιγμα ιστοσελίδας"></a>`;
+        if(block.type === "file" && block.value) content += `<a href="${block.value}" download><img src="otherfiles/file.png" class="file" title="Λήψη αρχείου"></a>`;
+      });
+    }
+
+    selectedText.innerHTML=`<h2>${title} <span class="date-label">— ${dateText}</span></h2>${content}`;
+  });
+});
+
+// Highlight current day
+const jsDay = new Date().getDay();
+if(jsDay>=1 && jsDay<=5){
+  const dayMap=["","Δευ","Τρι","Τετ","Πεμ","Παρ"];
+  const todayRow=document.querySelector(`tr[data-day="${dayMap[jsDay]}"]`);
+  if(todayRow) todayRow.classList.add("highlight-day");
+}
+</script>
+
+</body>
+</html>

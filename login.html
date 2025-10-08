@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <title>Σύνδεση — Πρόγραμμα</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Small inline styles for the login box */
+    .login-box {
+      max-width: 360px;
+      margin: 60px auto;
+      padding: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .login-box h2 { margin-top: 0; }
+    .login-field { margin-bottom: 12px; width: 100%; }
+    .login-field label { display:block; margin-bottom:6px; font-size:0.95rem; }
+    .login-field input { width:100%; padding:8px 10px; font-size:1rem; box-sizing:border-box; }
+
+    .btn {
+      display:inline-block;
+      background:#0077cc;
+      color:white;
+      padding:8px 14px;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      font-size:1rem;
+    }
+
+    .error { color: #b00020; margin-top: 8px; }
+    .small { font-size:0.9rem; color:#555; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="login-box" role="main" aria-labelledby="loginTitle">
+    <h2 id="loginTitle">Σύνδεση</h2>
+
+    <div class="login-field">
+      <label for="username">Όνομα χρήστη</label>
+      <input id="username" type="text" autocomplete="username" />
+    </div>
+
+    <div class="login-field">
+      <label for="password">Κωδικός</label>
+      <input id="password" type="password" autocomplete="current-password" />
+    </div>
+
+    <div>
+      <button id="loginBtn" class="btn">Σύνδεση</button>
+    </div>
+
+    <div id="error" class="error" role="alert" aria-live="assertive" style="display:none;"></div>
+
+    <div class="small">
+      Αυτό το demo κάνει έλεγχο στο πελάτη (client-side). Για ασφαλή χρήση σε πραγματικό περιβάλλον χρειάζεστε server-side authentication και αποθήκευση hashed κωδικών.
+    </div>
+  </div>
+
+<script>
+/* Simple client-side login (demo only) */
+const loginBtn = document.getElementById('loginBtn');
+const errEl = document.getElementById('error');
+
+loginBtn.addEventListener('click', async (e) => {
+  e.preventDefault();
+  errEl.style.display = 'none';
+
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value;
+
+  if (!username || !password) {
+    showError('Συμπλήρωσε όνομα χρήστη και κωδικό.');
+    return;
+  }
+
+  try {
+    const res = await fetch('userlist.json', { cache: 'no-store' });
+    if (!res.ok) {
+      showError('Σφάλμα φόρτωσης λίστας χρηστών.');
+      return;
+    }
+    const users = await res.json();
+
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (!user) {
+      showError('Λανθασμένο όνομα χρήστη ή κωδικός.');
+      return;
+    }
+
+    const safeUser = {
+      username: user.username,
+      displayName: user.displayName || user.username,
+      loggedAt: new Date().toISOString()
+    };
+
+    sessionStorage.setItem('loggedInUser', JSON.stringify(safeUser));
+    window.location.href = 'webpage.html';
+
+  } catch (err) {
+    console.error(err);
+    showError('Σφάλμα κατά τον έλεγχο. Δοκίμασε ξανά.');
+  }
+});
+
+function showError(msg) {
+  errEl.textContent = msg;
+  errEl.style.display = 'block';
+}
+</script>
+</body>
+</html>
