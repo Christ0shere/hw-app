@@ -1,14 +1,50 @@
 [
   {
-    "username": "giorgosf",
-    "password": "password123",
-    "displayName": "Γιώργος Φ.",
-    "isadmin": false
-  },
-  {
     "username": "admin",
     "password": "adminpass",
     "displayName": "Administrator",
     "isadmin": true
+  },
+  {
+    "username": "georgefountouB4",
+    "password": "fountou2012",
+    "displayName": "Γιώργος Φουντούκης",
+    "isadmin": false
+  },
+  {
+    "username": "JohnFloros",
+    "password": "290612",
+    "displayName": "Γιάννης Φλώρος",
+    "isadmin": false
+  },
+  {
+    "username": "mark_pats",
+    "password": "pats2025",
+    "displayName": "Μάρκος Πατσιόλης",
+    "isadmin": false
+  },
+  {
+    "username": "PolychrouPanagiota",
+    "password": "poly2012",
+    "displayName": "Παναγιώτα Πολύχρου",
+    "isadmin": false
+  },
+  {
+    "username": "EleutheriaSachanidou2310",
+    "password": "salou069",
+    "displayName": "Ελευθερία Σαχανίδου",
+    "isadmin": false
+  },
+  {
+    "username": "Pipero67e",
+    "password": "vasilis67",
+    "displayName": "Βασίλης Πιπερόπουλος",
+    "isadmin": false
+  },
+  {
+    "username": "konstantinosX",
+    "password": "kostas6767",
+    "displayName": "Κωνσταντίνος Χριστοφορίδης",
+    "isadmin": false
   }
 ]

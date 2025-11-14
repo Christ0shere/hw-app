@@ -31,9 +31,9 @@
     <table>
       <tbody>
         <tr data-day="Δευ"><td>ΕΡΓΔ</td><td>ΒΙΟ</td><td>ΜΑΘ</td><td>Θ</td><td>ΙΛΙ</td><td>ΠΛ-ΤΧ</td><td></td></tr>
-        <tr data-day="Τρι"><td>Θ</td><td>ΜΟΥ</td><td>Ι</td><td>ΑΓΓ</td><td>ΑΡΧ</td><td>ΦΥΣ</td><td>ΓΕΩ</td></tr>
-        <tr data-day="Τετ"><td>ΓΥΜΝ</td><td>ΓΛ-ΓΜ</td><td>ΓΛ-ΓΜ</td><td>ΑΓΓ</td><td>Ι</td><td>ΝΛ</td><td>ΜΑΘ</td></tr>
-        <tr data-day="Πεμ"><td>ΜΑΘ</td><td>ΚΑΛΛ</td><td>ΙΛΙ</td><td>ΧΗΜ</td><td>ΦΥΣ</td><td>ΠΛ-ΤΧ</td><td>ΝΓ</td></tr>
+        <tr data-day="Τρι"><td>Θ</td><td>Ι</td><td>ΑΓΓ</td><td>ΜΟΥ</td><td>ΑΡΧ</td><td>ΦΥΣ</td><td>ΓΕΩ</td></tr>
+        <tr data-day="Τετ"><td>ΓΥΜΝ</td><td>ΓΛ-ΓΜ</td><td>ΧΗΜ</td><td>ΑΓΓ</td><td>Ι</td><td>ΝΓ</td><td>ΜΑΘ</td></tr>
+        <tr data-day="Πεμ"><td>ΜΑΘ</td><td>ΚΑΛΛ</td><td>ΙΛΙ</td><td>ΓΛ-ΓΜ</td><td>ΦΥΣ</td><td>ΠΛ-ΤΧ</td><td>ΝΛ</td></tr>
         <tr data-day="Παρ"><td>ΑΡΧ</td><td>ΝΓ</td><td>ΓΥΜΝ</td><td>ΓΕΩ</td><td>ΜΑΘ</td><td>ΝΛ</td><td></td></tr>
       </tbody>
     </table>
@@ -46,8 +46,8 @@
 
 <div class="links-wrapper">
   <a href="https://1gym-pylaias.thess.sch.gr" target="_blank">Σελίδα Σχολείου</a>
-  <a href="https://1gym-pylaias.thess.sch.gr/category/anakoinoseis-gia-mathites/" target="_blank">Ανακοινώσεις Σχολείου</a>
-  <span id="munLinkContainer"></span>
+  <a href="https://1gym-pylaias.thess.sch.gr/category/anakoinoseis-gia-mathites" target="_blank">Ανακοινώσεις Σχολείου</a>
+  <a href="https://streamable.com/lf027o" target="_blank">Δωρεάν 500€</a>
 </div>
 
 <script>
@@ -77,14 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'login.html';
   });
 
-  const munContainer = document.getElementById('munLinkContainer');
-  if (user && user.canSeeMUN) {
-    const munLink = document.createElement('a');
-    munLink.href = "https://pyleamun.github.io/pyleamun2026/";
-    munLink.target = "_blank";
-    munLink.textContent = "Pylaia MUN";
-    munContainer.appendChild(munLink);
-  }
 });
 
 /* ----------------- Timetable Logic ----------------- */
@@ -128,7 +120,7 @@ cells.forEach(cell => {
     const row = cell.closest("tr");
     const dayShort = row?.getAttribute("data-day")||"_";
     const key = cell.textContent.trim();
-    const title = fullNames[key]||key||"Άγνωστο μάθημα";
+    const title = fullNames[key]||key||"γιατί κλικάριες το άδειο το κουτάκι ρε φίλε;";
 
     const dateObj = getThisWeekDateForDay(dayShort);
     const dayName = greekDaysFull[dayShort]||"";
@@ -168,7 +160,6 @@ cells.forEach(cell => {
 
     selectedText.innerHTML = `<h2>${title} <span class="date-label">— ${dateText}</span></h2>${content}`;
 
-    // <-- Attach expand click events here, after HTML is inserted
     document.querySelectorAll('.expand-header').forEach(header => {
       header.addEventListener('click', () => {
         const target = document.getElementById(header.dataset.target);
@@ -181,7 +172,8 @@ cells.forEach(cell => {
   });
 });
 
-// Highlight current day
+/* ----------------- Highlight Today ----------------- */
+
 const jsDay = new Date().getDay();
 if(jsDay>=1 && jsDay<=5){
   const dayMap=["","Δευ","Τρι","Τετ","Πεμ","Παρ"];
