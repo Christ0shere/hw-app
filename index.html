@@ -4,36 +4,6 @@
   <meta charset="UTF-8">
   <title>Πρόγραμμα</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      border-bottom: 1px solid #000;
-    }
-    .btn-logout {
-      background: #0077cc;
-      color: white;
-      border: 1px solid #000;
-      padding: 6px 12px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    .highlight-day {
-      background-color: #f0f8ff;
-    }
-    .web, .file {
-      width: 20px;
-      height: 20px;
-      margin-left: 5px;
-      vertical-align: middle;
-    }
-    .date-label {
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
 </head>
 <body>
 
@@ -154,6 +124,7 @@ function getThisWeekDateForDay(targetDay){
 
 cells.forEach(cell => {
   cell.addEventListener("click",()=>{
+
     const row = cell.closest("tr");
     const dayShort = row?.getAttribute("data-day")||"_";
     const key = cell.textContent.trim();
@@ -167,14 +138,46 @@ cells.forEach(cell => {
     let content = "";
 
     if(info.blocks && Array.isArray(info.blocks)){
-      info.blocks.forEach(block => {
-        if(block.type === "text") content += `<p>${block.value}</p>`;
-        if(block.type === "website" && block.value) content += `<a href="${block.value}" target="_blank"><img src="otherfiles/website.png" class="web" title="Άνοιγμα ιστοσελίδας"></a>`;
-        if(block.type === "file" && block.value) content += `<a href="${block.value}" download><img src="otherfiles/file.png" class="file" title="Λήψη αρχείου"></a>`;
+      info.blocks.forEach((block, i) => {
+        if(block.type === "text") {
+          content += `<p>${block.value}</p>`;
+        }
+        if(block.type === "website" && block.value) {
+          content += `<a href="${block.value}" target="_blank">
+                        <img src="otherfiles/website.png" class="web" title="Άνοιγμα ιστοσελίδας">
+                      </a>`;
+        }
+        if(block.type === "file" && block.value) {
+          content += `<a href="${block.value}" download>
+                        <img src="otherfiles/file.png" class="file" title="Λήψη αρχείου">
+                      </a>`;
+        }
+        if(block.type === "expand" && block.title && block.value) {
+          const id = `expand-${dayShort}-${key}-${i}`;
+          content += `
+            <div class="expand-container">
+              <div class="expand-header" data-target="${id}">
+                <span class="expand-arrow">▶</span>
+                <strong>${block.title}</strong>
+              </div>
+              <div id="${id}" class="expand-content">${block.value}</div>
+            </div>`;
+        }
       });
     }
 
-    selectedText.innerHTML=`<h2>${title} <span class="date-label">— ${dateText}</span></h2>${content}`;
+    selectedText.innerHTML = `<h2>${title} <span class="date-label">— ${dateText}</span></h2>${content}`;
+
+    // <-- Attach expand click events here, after HTML is inserted
+    document.querySelectorAll('.expand-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const target = document.getElementById(header.dataset.target);
+        const arrow = header.querySelector('.expand-arrow');
+        const isOpen = target.classList.toggle('open');
+        arrow.classList.toggle('open', isOpen);
+      });
+    });
+
   });
 });
 

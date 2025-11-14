@@ -1,47 +1,47 @@
 {
   "Δευ": {
-    "ΕΡΓΔ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΒΙΟ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΜΑΘ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "Θ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΙΛΙ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΠΛ-ΤΧ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] }
+    "ΕΡΓΔ": { "blocks": [] },
+    "ΒΙΟ": { "blocks": [] },
+    "ΜΑΘ": { "blocks": [] },
+    "Θ": { "blocks": [] },
+    "ΙΛΙ": { "blocks": [] },
+    "ΠΛ-ΤΧ": { "blocks": [] }
   },
   "Τρι": {
-    "Θ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΜΟΥ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "Ι": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΑΓΓ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΑΡΧ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΦΥΣ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΓΕΩ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] }
+    "Θ": { "blocks": [] },
+    "ΜΟΥ": { "blocks": [] },
+    "Ι": { "blocks": [] },
+    "ΑΓΓ": { "blocks": [] },
+    "ΑΡΧ": { "blocks": [] },
+    "ΦΥΣ": { "blocks": [] },
+    "ΓΕΩ": { "blocks": [] }
   },
   "Τετ": {
-    "ΓΥΜΝ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΓΛ-ΓΜ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΑΓΓ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "Ι": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΝΛ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΜΑΘ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] }
+    "ΓΥΜΝ": { "blocks": [] },
+    "ΓΛ-ΓΜ": { "blocks": [] },
+    "ΑΓΓ": { "blocks": [] },
+    "Ι": { "blocks": [] },
+    "ΝΛ": { "blocks": [] },
+    "ΜΑΘ": { "blocks": [] }
   },
   "Πεμ": {
-    "ΜΑΘ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΚΑΛΛ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΙΛΙ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΧΗΜ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΦΥΣ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΠΛ-ΤΧ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΝΓ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] }
+    "ΜΑΘ": { "blocks": [] },
+    "ΚΑΛΛ": { "blocks": [] },
+    "ΙΛΙ": { "blocks": [] },
+    "ΧΗΜ": { "blocks": [] },
+    "ΦΥΣ": { "blocks": [] },
+    "ΠΛ-ΤΧ": { "blocks": [] },
+    "ΝΓ": { "blocks": [] }
   },
   "Παρ": {
-    "ΑΡΧ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΝΓ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΓΥΜΝ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΓΕΩ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΜΑΘ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] },
-    "ΝΛ": { "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }] }
+    "ΑΡΧ": { "blocks": [] },
+    "ΝΓ": { "blocks": [] },
+    "ΓΥΜΝ": { "blocks": [] },
+    "ΓΕΩ": { "blocks": [] },
+    "ΜΑΘ": { "blocks": [] },
+    "ΝΛ": { "blocks": [] }
   },
   "_": {
-    "blocks": [{ "type": "text", "value": "Χωρίς Πληροφορίες" }, { "type": "file", "value": "Χωρίς Πληροφορίες" }, { "type": "website", "value": "Χωρίς Πληροφορίες" }]
+    "blocks": []
   }
 }
