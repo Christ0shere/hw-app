@@ -43,8 +43,20 @@
   },
   {
     "username": "konstantinosX",
-    "password": "kostas6767",
+    "password": "kostas4245",
     "displayName": "Κωνσταντίνος Χριστοφορίδης",
+    "isadmin": false
+  },
+  {
+    "username": "SpyrosServatas",
+    "password": "progoulistrati",
+    "displayName": "Σπύρος Σερβρακάς",
+    "isadmin": false
+  },
+  {
+    "username": "Mas-man_0212",
+    "password": "sukablyat0212",
+    "displayName": "Κωσταντίνος Σγούρας",
     "isadmin": false
   }
 ]
