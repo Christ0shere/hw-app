@@ -58,5 +58,11 @@
     "password": "sukablyat0212",
     "displayName": "Κωσταντίνος Σγούρας",
     "isadmin": false
+  },
+  {
+    "username": "kleonpapadopoulos",
+    "password": "kleon4921",
+    "displayName": "Κλέων Παπαδόπουλος",
+    "isadmin": false
   }
 ]
