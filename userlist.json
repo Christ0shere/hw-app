@@ -64,5 +64,53 @@
     "password": "kleon4921",
     "displayName": "Κλέων Παπαδόπουλος",
     "isadmin": false
+  },
+  {
+    "username": "simos_dakos12",
+    "password": "papaspyridokos@",
+    "displayName": "Σίμος Παπασπυρίδακος",
+    "isadmin": false
+  },
+  {
+    "username": "PAOK1926",
+    "password": "PaOk1926$",
+    "displayName": "Αλέξανδρος Παυλίδης",
+    "isadmin": false
+  },
+  {
+    "username": "SavvidouE",
+    "password": "sav3003",
+    "displayName": "Σαββίδου Εμμέλια",
+    "isadmin": false
+  },
+  {
+    "username": "SpryosR",
+    "password": "spyros9494",
+    "displayName": "Σπύρος Ρηκούδης",
+    "isadmin": false
+  },
+  {
+    "username": "StratisP",
+    "password": "stratos40",
+    "displayName": "Στρατής Πινούλης",
+    "isadmin": false
+  },
+  {
+    "username": "marolaz",
+    "password": "Maria220950",
+    "displayName": "Μαρία Περτσικάπα",
+    "isadmin": false
+  },
+  {
+    "username": "tomaspatras",
+    "password": "patras929",
+    "displayName": "Θωμάς Πάτρας",
+    "isadmin": false
+  },
+  {
+    "username": "antonissavvidis",
+    "password": "antonis5317",
+    "displayName": "Αντώνης Σαββίδης",
+    "isadmin": false
   }
 ]
