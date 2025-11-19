@@ -1,7 +1,7 @@
-/* General table styling */
+
 table {
   border-collapse: collapse;
-  text-align: center; /* changed from right to center for better display */
+  text-align: center; 
 }
 
 td {
@@ -14,70 +14,64 @@ td {
   transition: background-color 0.3s;
 }
 
-/* Highlight on hover */
+
 td:hover {
   background-color: lightblue;
 }
 
-/* Days column styling */
+
 .days-column td {
   font-weight: bold;
-  cursor: default; /* Not clickable */
+  cursor: default;
 }
 
-/* Optional: remove hover effects for days column */
 .days-column td:hover {
   background: none;
 }
 
 .days-column {
-  display: table;       /* keeps it a table visually */
-  margin: 0;            /* remove default spacing */
+  display: table;       
+  margin: 0; 
 }
 
-
-/* Highlight current day */
 .highlight-day td {
   background-color: #fff8c4 !important;
 }
 
 .schedule-wrapper {
   display: flex;
-  flex-direction: row; /* make children go side by side */
+  flex-direction: row; 
   align-items: flex-start;
   gap: 10px;
 }
 
-
-
 .table-wrapper {
   display: flex;
-  flex-direction: column; /* table + description stack vertically */
+  flex-direction: column; 
   align-items: flex-start;
   gap: 20px;
   
 }
 
 .table-wrapper table {
-  width: 500px;       /* fixed width */
-  table-layout: fixed; /* prevent column stretching */
-}
+  width: 500px;      
+  table-layout: fixed;
 
 .table-wrapper {
   display: flex;
   align-items: flex-start;
   gap: 20px;
   justify-content: flex-start;
-  width: auto; /* let it shrink to table width */
+  width: auto; 
 }
 
 .selected-wrapper {
-  min-width: 250px;        /* fixed width for description */
-  padding-left: 0;          /* remove extra padding if any */
-  text-align: left;         /* force left alignment */
-  display: flex;            /* make it a flex container */
-  flex-direction: column;   /* stack h2 and p vertically */
-  align-items: flex-start;  /* align content to left */
+  min-width: 250px;       
+  padding-left: 0;         
+  text-align: left;        
+  display: flex;      
+  flex-direction: column;  
+  align-items: flex-start;
 }
 
 .selected-wrapper h2,
@@ -85,10 +79,7 @@ td:hover {
   margin: 0;
   width: 100%;
 }
-
-
-
-/* Small icons for website and file links */
+}
 .web {
   width: 20px;
   height: 20px;
@@ -122,7 +113,6 @@ td:hover {
   font-weight: normal;
 }
 
-/* Links section styling */
 .links-wrapper {
   margin-top: 20px;
 }
@@ -139,7 +129,6 @@ td:hover {
   text-decoration: underline;
 }
 
-/* Header / topbar */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -189,15 +178,16 @@ td:hover {
     display: block;
   }
 
-      .login-box {
-      max-width: 360px;
-      margin: 60px auto;
-      padding: 20px;
-      background: #fff;
-      border: 1px solid #ddd;
-      text-align: left;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+.login-box {
+  max-width: 500px;
+  margin: 120px auto;
+  padding: 37px;
+  background: #fff;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 
     .login-box h2 { margin-top: 0; }
     .login-field { margin-bottom: 12px; width: 100%; }
@@ -243,3 +233,8 @@ td:hover {
       font-size: 0.9rem;
       color: #555;
     }
+
+
+body {
+  zoom: 190%;
+}
