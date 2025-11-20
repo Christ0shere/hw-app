@@ -112,5 +112,11 @@
     "password": "antonis5317",
     "displayName": "Αντώνης Σαββίδης",
     "isadmin": false
+  },
+  {
+    "username": "MarkellaR",
+    "password": "raftopoulou95",
+    "displayName": "Μαρκέλλα Ραφτοπούλου",
+    "isadmin": false
   }
 ]
