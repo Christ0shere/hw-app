@@ -8,13 +8,13 @@
     "ΠΛ-ΤΧ": { "blocks": [] }
   },
   "Τρι": {
-    "Θ": { "blocks": [] },
-    "Ι": { "blocks": [] },
-    "ΑΓΓ": { "blocks": [] },
-    "ΜΟΥ": { "blocks": [] },
-    "ΑΡΧ": { "blocks": [] },
-    "ΦΥΣ": { "blocks": [] },
-    "ΓΕΩ": { "blocks": [] }
+    "Θ": { "blocks": [{"type":"text","value":"<br>Συνεχίσαμε να γράφουμε για αυτό που γράψαμε την τελευταία φορά"}] },
+    "Ι": { "blocks": [{"type":"text","value":"<br>To ίδιο μάθημα που είχαμε για αυτήν την φορά"}] },
+    "ΑΓΓ": { "blocks": [{"type":"text","value":"<br>Κάναμε ιστορία"}] },
+    "ΜΟΥ": { "blocks": [{"type":"text","value":"<br>Πήαρμε τα test"},{"type":"website","value":"https://www.youtube.com/watch?v=SE0W2syPjK8&t=15"}] },
+    "ΑΡΧ": { "blocks": [{"type":"text","value":"<br>Να κλίνουμε:"},{"type":"expand","title":"Ουσιαστικά","value":"<p>ἡ μήτηρ<br>το ἔθνος<br>ὁ δαίμων<br>ὁ Ἀριστοφάνης</p>"}] },
+    "ΦΥΣ": { "blocks": [{"type":"website","value":"https://www.youtube.com/watch?v=gauxLrw1k5Y"}] },
+    "ΓΕΩ": { "blocks": [{"type":"text","value":"<br><b>Επόμενη φορά γράφουμε</b>"}] }
   },
   "Τετ": {
     "ΓΥΜΝ": { "blocks": [] },
