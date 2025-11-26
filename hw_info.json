@@ -13,17 +13,17 @@
     "ΑΓΓ": { "blocks": [{"type":"text","value":"<br>Κάναμε ιστορία"}] },
     "ΜΟΥ": { "blocks": [{"type":"text","value":"<br>Πήαρμε τα test"},{"type":"website","value":"https://www.youtube.com/watch?v=SE0W2syPjK8&t=15"}] },
     "ΑΡΧ": { "blocks": [{"type":"text","value":"<br>Να κλίνουμε:"},{"type":"expand","title":"Ουσιαστικά","value":"<p>ἡ μήτηρ<br>το ἔθνος<br>ὁ δαίμων<br>ὁ Ἀριστοφάνης</p>"}] },
-    "ΦΥΣ": { "blocks": [{"type":"website","value":"https://www.youtube.com/watch?v=gauxLrw1k5Y"}] },
+    "ΦΥΣ": { "blocks": [{"type":"website","value":"https://www.youtube.com/watch?v=gauxLrw1k5Y&t=13"}] },
     "ΓΕΩ": { "blocks": [{"type":"text","value":"<br><b>Επόμενη φορά γράφουμε</b>"}] }
   },
   "Τετ": {
-    "ΓΥΜΝ": { "blocks": [] },
-    "ΓΛ-ΓΜ": { "blocks": [] },
-    "ΧΗΜ": { "blocks": [] },
-    "ΑΓΓ": { "blocks": [] },
-    "Ι": { "blocks": [] },
-    "ΝΓ": { "blocks": [] },
-    "ΜΑΘ": { "blocks": [] }
+    "ΓΥΜΝ": { "blocks": [{"type":"text","value":"<br>μάντεψε"}] },
+    "ΓΛ-ΓΜ": { "blocks": [{"type":"text","value":"<br><b>Γερμανικά</b><br>σελ. 14 την άσκηση του κείμενου<br><br><b>Γαλλικά</b><br>"},{"type":"website","value":"https://www.youtube.com/shorts/0lolCXBb3Rs"}] },
+    "ΧΗΜ": { "blocks": [{"type":"text","value":"<br>Έλειπε, μας πήρε ο Δόμβρος τρίωρο"}] },
+    "ΑΓΓ": { "blocks": [{"type":"text","value":"<br>Σελίδα 22 - 23 όλα<br>Η άσκηση με την προφορά (pronounciation) θα γίνει προφορικά στην τάξη"}] },
+    "Ι": { "blocks": [{"type":"text","value":"<br>Το κεφάλαιο για την διάδοση του Χριστιανισμού<br>Ιστοσελίδα του Δόμβρου:"},{"type":"website","value":"https://domvros-his.github.io/byzantine-christianisation/"}] },
+    "ΝΓ": { "blocks": [{"type":"text","value":"<br>Δεν πρόσεχα να ρωτήστε στην ομαδική 😂🫵"}] },
+    "ΜΑΘ": { "blocks": [{"type":"text","value":"<br>Σελίδα 130 ασκ. 1<br>ΜΑΣ ΕΙΠΕ ΜΟΝΟ ΓΕΩΜΕΤΡΙΑ ΜΕΧΡΙ ΝΑ ΓΡΑΨΟΥΜΕ ΔΙΑΓΩΝΙΣΜΑ."}] }
   },
   "Πεμ": {
     "ΜΑΘ": { "blocks": [] },
